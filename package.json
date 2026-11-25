@@ -1,0 +1,29 @@
+{
+  "name": "@tracksim/sdk",
+  "version": "0.1.0",
+  "description": "Open-source JavaScript & TypeScript client for the TrackSim API and webhooks",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "engines": { "node": ">=20" },
+  "sideEffects": false,
+  "keywords": ["tracksim", "ets2", "ats", "euro-truck-simulator", "american-truck-simulator", "vtc", "api", "sdk", "webhooks"],
+  "homepage": "https://docs.tracksim.app",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "npm run build && node --test test/*.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "publishConfig": { "access": "public" },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
